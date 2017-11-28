@@ -28,7 +28,11 @@ public class ParkingLotTest {
 
 	@Test
 	public void test() {
-		ParkingLot pl = new ParkingLot(1, 5);
+		
+		int spotPerFloor = 5;
+		int buildingFloor = 2;
+		
+		ParkingLot pl = new ParkingLot(buildingFloor, spotPerFloor);
 		
 		Car audiR8 = new Car("MAMAM14","Audi");
 		Car tytSupra = new Car("SP33D","Toyota");
@@ -47,14 +51,12 @@ public class ParkingLotTest {
 			pl.insertVehicle(tytSupra2);
 			pl.insertVehicle(tytSupra3);
 			pl.insertVehicle(ninja);
-//			pl.insertVehicle(ninja2);
+			pl.insertVehicle(ninja2);
 			
 	
-			/**Overload Test*/
 //			pl.insertVehicle(tytSupra4);
 //			pl.insertVehicle(tytSupra5);
 			
-			/**Double insertion Test*/
 //			pl.insertVehicle(audiR8);
 			
 			
@@ -63,7 +65,11 @@ public class ParkingLotTest {
 		}
 		
 		System.out.println(pl.searchVehicle("MAMAM14"));
-		System.out.println(pl.searchVehicle("NINJ42"));
+		System.out.println(pl.searchVehicle("NINJ432"));
+		
+		pl.vehicleExit("NINJ4");
+//		System.out.println(pl.searchVehicle("NINJ4"));
+		
 		System.out.println("FREE SPACE IS " + pl.freeParkingSpace());	
 		System.out.println("MOTOR SPACE IS " + pl.motorParkingSpace());	
 		

@@ -49,5 +49,21 @@ public class ParkingSpot {
 		}
 		return false;
 	}
+
+	public boolean vehicleExit(String plateNumber) {
+		
+		for(int i = 0 ; i < vehicleSpot.size();i++){
+			
+			Vehicle v = vehicleSpot.get(i);
+			
+			if(v.getPlateNumber().equals(plateNumber)) {
+				vehicleSpot.remove(i);
+				return true;
+			}
+		}
+		
+		return false;
+		
+	}
 	
 }

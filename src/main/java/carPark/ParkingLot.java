@@ -24,6 +24,32 @@ public class ParkingLot {
 		
 	}
 	
+	public void vehicleExit(String plateNumber) {
+		
+		boolean exit = false;
+		
+		for(int i = 0; i < buildingFloor ; i++) {
+			for(int j=0; j < spotPerFloor ; j++) {
+		
+				if(exit) {
+					break;
+				}
+				
+				if(parkingSpots[i][j].vehicleExit(plateNumber)) {
+					System.out.println(plateNumber + " exited from "+i+"F number " + j );
+					exit = true;
+				};
+				
+			}
+			if(exit) {
+				break;
+			}
+		}
+		if(!exit) {
+			System.out.println("Vehicle not found");
+		}
+	}
+	
 	public void insertVehicle(Vehicle vehicle) throws VehicleAlreadyInserted{
 		
 		boolean inserted = false;
@@ -80,7 +106,7 @@ public class ParkingLot {
 			}
 		}
 		
-		return "Car not found";
+		return carPlate + " not found";
 	
 	}
 	
