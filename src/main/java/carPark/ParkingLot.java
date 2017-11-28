@@ -102,6 +102,23 @@ public class ParkingLot {
 		return false;
 	}
 	
+	public int freeParkingSpace() {
+		
+		int freeSpace = 0;
+		
+		for(int i = 0; i < buildingFloor ; i++) {
+			for(int j=0; j < spotPerFloor ; j++) {
+				
+				if(parkingSpots[i][j].isEmpty()) {
+					freeSpace++;
+				}
+				
+			}
+		}
+		
+		return freeSpace;
+		
+	}
 	
 	
 }

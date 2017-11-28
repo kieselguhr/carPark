@@ -43,13 +43,21 @@ public class ParkingLotTest {
 			pl.insertVehicle(tytSupra);
 			pl.insertVehicle(tytSupra2);
 			pl.insertVehicle(tytSupra3);
-			pl.insertVehicle(audiR8);
+	
+			/**Overload Test*/
+//			pl.insertVehicle(tytSupra4);
+//			pl.insertVehicle(tytSupra5);
+			
+			/**Double insertion Test*/
+//			pl.insertVehicle(audiR8);
+			
 			
 		}catch(VehicleAlreadyInserted e) {
 			System.out.println("Vehicle is already inserted");
 		}
 		
 		System.out.println(pl.searchVehicle("MAMAM14"));
+		System.out.println("FREE SPACE IS " + pl.freeParkingSpace());	
 		
 	}
 

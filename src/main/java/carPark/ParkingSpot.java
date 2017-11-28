@@ -41,4 +41,11 @@ public class ParkingSpot {
 		
 	}
 	
+	public boolean isEmpty() {
+		if(vehicleSpot.size() == 0 ) {
+			return true;
+		}
+		return false;
+	}
+	
 }
