@@ -113,10 +113,31 @@ public class ParkingLot {
 					freeSpace++;
 				}
 				
+				
+				
 			}
 		}
 		
 		return freeSpace;
+		
+	}
+	
+	public int motorParkingSpace() {
+		
+		int motorParkingSpace = 0; 
+		
+		for(int i = 0; i < buildingFloor ; i++) {
+			for(int j=0; j < spotPerFloor ; j++) {
+				
+				if(parkingSpots[i][j].spaceLeft()>0) {
+					motorParkingSpace += parkingSpots[i][j].spaceLeft() / Motorbike.MOTORSIZE;
+				}
+				
+				
+			}
+		}
+		
+		return motorParkingSpace;
 		
 	}
 	

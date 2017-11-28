@@ -37,6 +37,8 @@ public class ParkingSpot {
 			size -= v.getSize();
 		}
 		
+//		System.out.println("SIZE is " + size);
+		
 		return size;
 		
 	}

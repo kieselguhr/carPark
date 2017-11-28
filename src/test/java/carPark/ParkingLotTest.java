@@ -37,12 +37,18 @@ public class ParkingLotTest {
 		Car tytSupra4 = new Car("SP33D4","Toyota");
 		Car tytSupra5 = new Car("SP33D5","Toyota");
 		
+		Motorbike ninja = new Motorbike("NINJ4", "Kawasaki");
+		Motorbike ninja2 = new Motorbike("NINJ42", "Kawasaki");
+		
 		try {
 			
 			pl.insertVehicle(audiR8);
 			pl.insertVehicle(tytSupra);
 			pl.insertVehicle(tytSupra2);
 			pl.insertVehicle(tytSupra3);
+			pl.insertVehicle(ninja);
+//			pl.insertVehicle(ninja2);
+			
 	
 			/**Overload Test*/
 //			pl.insertVehicle(tytSupra4);
@@ -57,7 +63,9 @@ public class ParkingLotTest {
 		}
 		
 		System.out.println(pl.searchVehicle("MAMAM14"));
+		System.out.println(pl.searchVehicle("NINJ42"));
 		System.out.println("FREE SPACE IS " + pl.freeParkingSpace());	
+		System.out.println("MOTOR SPACE IS " + pl.motorParkingSpace());	
 		
 	}
 
