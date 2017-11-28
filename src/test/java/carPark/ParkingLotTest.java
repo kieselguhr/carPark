@@ -37,14 +37,20 @@ public class ParkingLotTest {
 		Car tytSupra4 = new Car("SP33D4","Toyota");
 		Car tytSupra5 = new Car("SP33D5","Toyota");
 		
-		pl.insertVehicle(audiR8);
-		pl.insertVehicle(tytSupra);
-		pl.insertVehicle(tytSupra2);
-		pl.insertVehicle(tytSupra3);
-		pl.insertVehicle(tytSupra4);
-		pl.insertVehicle(tytSupra5);
+		try {
+			
+			pl.insertVehicle(audiR8);
+			pl.insertVehicle(tytSupra);
+			pl.insertVehicle(tytSupra2);
+			pl.insertVehicle(tytSupra3);
+			pl.insertVehicle(audiR8);
+			
+		}catch(VehicleAlreadyInserted e) {
+			System.out.println("Vehicle is already inserted");
+		}
 		
 		System.out.println(pl.searchVehicle("MAMAM14"));
+		
 	}
 
 }

@@ -1,7 +1,7 @@
 package carPark;
 
 public class ParkingLot {
-
+	
 	ParkingSpot parkingSpots[][];
 	
 	int buildingFloor;
@@ -24,16 +24,28 @@ public class ParkingLot {
 		
 	}
 	
-	public void insertVehicle(Vehicle vehicle) {
+	public void insertVehicle(Vehicle vehicle) throws VehicleAlreadyInserted{
 		
 		boolean inserted = false;
+		
+		if(vehicleFound(vehicle.getPlateNumber())) {
+			
+			VehicleAlreadyInserted error = new VehicleAlreadyInserted();
+			
+			throw(error);
+			
+		}
 		
 		for(int i = 0; i < buildingFloor ; i++) {
 			for(int j=0; j < spotPerFloor ; j++) {
 				
+				if(inserted) {
+					break;
+				}
+				
 				if(parkingSpots[i][j].spaceLeft() >= vehicle.size) {
 					
-					System.out.println("Vehicle is inserted on "+i+"F number " + j);
+					System.out.println(vehicle.getPlateNumber() + " is inserted on "+i+"F number " + j);
 					parkingSpots[i][j].addVehicle(vehicle);
 					inserted = true;
 					break;
@@ -61,7 +73,7 @@ public class ParkingLot {
 				
 				for(String whatCar : parkedCars) {
 					if(whatCar.equals(carPlate)) {
-						return "Vehicle is parked on "+i+"F number " + j; 
+						return carPlate + " is parked on "+i+"F number " + j; 
 					}
 				}
 				
